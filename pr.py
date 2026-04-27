@@ -35,8 +35,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ====================== 固定绝对路径 ======================
-MAIN_XLSX = r"H:\Dept\HzP_LOG\05_MSE-LOP\11_PP&MP\XSU3HZ\coding\AI\final_model\Non_FG\finally\Dashboard_Master_Data.xlsx"
-PLAN_XLSX = r"H:\Dept\HzP_LOG\05_MSE-LOP\11_PP&MP\XSU3HZ\coding\AI\final_model\Non_FG\finally\计划员-价值流信息xlsx.xlsx"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
+MAIN_XLSX = os.path.join(BASE_DIR, "Dashboard_Master_Data.xlsx")
+PLAN_XLSX = os.path.join(BASE_DIR, "计划员-价值流信息xlsx.xlsx")
 
 @st.cache_data(ttl=3600)
 def load_data():
